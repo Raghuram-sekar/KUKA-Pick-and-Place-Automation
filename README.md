@@ -2,15 +2,15 @@
 ![KUKA](https://img.shields.io/badge/KUKA-Robotics-orange?style=for-the-badge) ![ROS2](https://img.shields.io/badge/ROS2-Humble-blue?style=for-the-badge) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 ## 📋 Table of Contents
-- [Project Overview](#🎯-project-overview)
-- [What This Project Does](#🚀-what-this-project-does)
-- [Key Innovation](#🔬-key-innovation)
-- [Performance Highlights](#📊-performance-highlights)
-- [Architecture](#🏗️-architecture)
-- [Methodology & Technical Details](#⚙️-methodology--technical-details)
-- [Project Structure](#📂-project-structure)
-- [Tech Stack](#🧱-tech-stack)
-- [Quick Start](#💻-quick-start)
+- [Project Overview](#-project-overview)
+- [What This Project Does](#-what-this-project-does)
+- [Key Innovation](#-key-innovation)
+- [Performance Highlights](#-performance-highlights)
+- [Architecture](#-architecture)
+- [Methodology & Technical Details](#-methodology--technical-details)
+- [Project Structure](#-project-structure)
+- [Tech Stack](#-tech-stack)
+- [Quick Start](#-quick-start)
 
 ---
 
