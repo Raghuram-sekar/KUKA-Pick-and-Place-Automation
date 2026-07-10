@@ -7,6 +7,8 @@
 - [Key Innovation](#🔬-key-innovation)
 - [Performance Highlights](#📊-performance-highlights)
 - [Architecture](#🏗️-architecture)
+- [Methodology & Technical Details](#⚙️-methodology--technical-details)
+- [Project Structure](#📂-project-structure)
 - [Tech Stack](#🧱-tech-stack)
 - [Quick Start](#💻-quick-start)
 
@@ -40,7 +42,34 @@ Industrial robotics simulation and path planning using KUKA Robot Language (KRL)
 ---
 
 ## 🏗️ Architecture
-```\n[Core Architectural Components & Datastore Framework]\n```
+```mermaid
+graph LR
+    Sensor[Conveyor I/O sensor] -->|Signal active| Controller[KUKA KRC4 Cabinet]
+    Controller -->|PTP Transition| Pickup[Approach Position]
+    Pickup -->|LIN path| Item[Grasp coordinate]
+    Item -->|Gripper Out| Drop[Linear release path]
+```
+
+---
+
+## ⚙️ Methodology & Technical Details
+### Kinematic Trajectory Planning (PTP vs LIN)
+To transport target payloads from a moving conveyor to sorting bins, KRL scripts define specific paths:
+- **Point-to-Point (PTP):** Utilized for fast positioning transitions through free space where the exact tool-path shape is irrelevant, minimizing joint motor strain.
+- **Linear (LIN):** Enforced during the critical pickup and placement phases to move the end-effector in a straight line, avoiding workpiece collisions.
+
+### 4-Point TCP Calibration
+We perform calibration using a stationary tip reference. By approaching the tip from 4 different angular orientations, the KUKA controller computes the Tool Center Point (TCP) offsets \([X, Y, Z]\) relative to the flange coordinate frame, reducing accuracy deviations to under **0.5 mm**.
+
+---
+
+## 📂 Project Structure
+```
+kuka_robotics/
+├── program.src          # KUKA Robot Language (KRL) script source
+├── program.dat          # KRL variable definitions (positions, coordinate bases)
+└── simulation/          # KUKA.Sim Pro workspace environment files
+```
 
 ---
 
